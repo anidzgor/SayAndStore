@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VoiceApp</string>
+    <string name="desc">record new product</string>
+</resources>

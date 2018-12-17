@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_layout_category_item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageButton
+        android:id="@+id/categoryItemButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@mipmap/ic_shop" />
+
+    <TextView
+        android:id="@+id/categoryItemText"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/categoryItemButton"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="0dp"
+        android:layout_marginStart="0dp"
+        android:gravity="center"
+        android:text="Lista zakupów"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
