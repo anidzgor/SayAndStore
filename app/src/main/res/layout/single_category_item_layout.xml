@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relative_layout_category_item"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    android:weightSum="2">
 
     <ImageButton
         android:id="@+id/categoryItemButton"
@@ -13,21 +15,18 @@
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
         android:background="@null"
         android:scaleType="fitCenter"
         app:srcCompat="@mipmap/ic_shop" />
 
     <TextView
         android:id="@+id/categoryItemText"
-        android:layout_width="110dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/categoryItemButton"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="0dp"
-        android:layout_marginStart="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:gravity="center"
         android:text="Lista zakupów"
         android:textSize="17dp"
