@@ -11,6 +11,12 @@
     <item
         android:id="@+id/settings_button"
         android:title="Ustawienia"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/about_app"
+        android:title="O aplikacji"
         app:showAsAction="never" />
 
 </menu>

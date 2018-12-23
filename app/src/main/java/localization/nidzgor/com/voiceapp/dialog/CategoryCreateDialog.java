@@ -23,7 +23,7 @@ import localization.nidzgor.com.voiceapp.adapter.RecyclerAdapterListNewCategorie
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class DialogCategoryCreate extends DialogFragment implements RecyclerAdapterListNewCategories.SendImageListener {
+public class CategoryCreateDialog extends DialogFragment implements RecyclerAdapterListNewCategories.SendImageListener {
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<Integer> mImageUrls = new ArrayList<>();

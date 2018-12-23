@@ -24,15 +24,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import localization.nidzgor.com.voiceapp.AppDatabase;
 import localization.nidzgor.com.voiceapp.adapter.RecyclerAdapterListCategory;
-import localization.nidzgor.com.voiceapp.dialog.DialogCategoryCreate;
+import localization.nidzgor.com.voiceapp.dialog.AboutDialog;
+import localization.nidzgor.com.voiceapp.dialog.CategoryCreateDialog;
 import localization.nidzgor.com.voiceapp.R;
 import localization.nidzgor.com.voiceapp.category.Category;
-import localization.nidzgor.com.voiceapp.dialog.DialogCategoryRemove;
+import localization.nidzgor.com.voiceapp.dialog.CategoryRemoveDialog;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class MainActivity extends AppCompatActivity implements DialogCategoryCreate.OnInputListener,
-        DialogCategoryRemove.DeleteListener {
+public class MainActivity extends AppCompatActivity implements CategoryCreateDialog.OnInputListener,
+        CategoryRemoveDialog.DeleteListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -127,6 +128,10 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
                 return true;
             case R.id.settings_button:
                 return true;
+            case R.id.about_app:
+                AboutDialog aboutDialog = new AboutDialog();
+                aboutDialog.show(getSupportFragmentManager(), "AboutDialog");
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -136,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
     }
 
     private void createNewCategory(MenuItem item) throws IllegalAccessException {
-        DialogCategoryCreate categoryDialog = new DialogCategoryCreate();
+        CategoryCreateDialog categoryDialog = new CategoryCreateDialog();
         Bundle bundle = new Bundle();
 
         Field[] fields = R.mipmap.class.getFields();

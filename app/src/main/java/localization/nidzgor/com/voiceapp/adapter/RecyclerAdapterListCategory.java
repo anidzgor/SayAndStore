@@ -23,7 +23,7 @@ import androidx.room.Room;
 import localization.nidzgor.com.voiceapp.AppDatabase;
 import localization.nidzgor.com.voiceapp.R;
 import localization.nidzgor.com.voiceapp.activity.CategoryActivity;
-import localization.nidzgor.com.voiceapp.dialog.DialogCategoryRemove;
+import localization.nidzgor.com.voiceapp.dialog.CategoryRemoveDialog;
 
 public class RecyclerAdapterListCategory extends RecyclerView.Adapter<RecyclerAdapterListCategory.CategoryViewHolder> {
 
@@ -69,14 +69,14 @@ public class RecyclerAdapterListCategory extends RecyclerView.Adapter<RecyclerAd
         holder.imageButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                DialogCategoryRemove dialogCategoryRemove = new DialogCategoryRemove();
+                CategoryRemoveDialog categoryRemoveDialog = new CategoryRemoveDialog();
                 FragmentManager manager = ((AppCompatActivity) mContext).getSupportFragmentManager();
                 Bundle bundle = new Bundle();
                 Integer id = appDatabase.categoryDao().getCategoryIdBasedName(mImageNames.get(position));
                 bundle.putInt("ID", id);
                 bundle.putInt("image", appDatabase.categoryDao().getImageById(id));
-                dialogCategoryRemove.setArguments(bundle);
-                dialogCategoryRemove.show(manager, "category_remove_dialog");
+                categoryRemoveDialog.setArguments(bundle);
+                categoryRemoveDialog.show(manager, "category_remove_dialog");
                 return true;
             }
         });

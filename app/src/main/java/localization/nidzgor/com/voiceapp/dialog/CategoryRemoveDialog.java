@@ -13,7 +13,7 @@ import androidx.room.Room;
 import localization.nidzgor.com.voiceapp.AppDatabase;
 import localization.nidzgor.com.voiceapp.R;
 
-public class DialogCategoryRemove extends DialogFragment {
+public class CategoryRemoveDialog extends DialogFragment {
 
     private TextView mActionOk;
     private TextView mActionCancel;
