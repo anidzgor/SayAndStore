@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Say&amp;Store</string>
+    <string name="desc">Zapisz nową myśl</string>
+    <string name="category_occupied">Nazwa kategorii zajęta</string>
+    <string name="category_enter">Wpisz nazwę kategorii</string>
+    <string name="category_created">Kategoria utworzona</string>
+
+    <string name="about_application_title">O aplikacji</string>
+    <string name="version">Wersja 1.0</string>
+    <string name="content_about">Ikony zostały użyte ze storny flaticon.com</string>
+
+    <string name="create">Utwórz</string>
+    <string name="cancel">Anuluj</string>
+
+    <string name="remove_category">Czy chcesz usunąć wybraną kategorie?</string>
+    <string name="back">Cofnij</string>
+    <string name="confirm">Potwierdź</string>
+
+    <string name="about">O aplikacji</string>
+
+    <string name="settings_name">Ustawienia</string>
+
+</resources>

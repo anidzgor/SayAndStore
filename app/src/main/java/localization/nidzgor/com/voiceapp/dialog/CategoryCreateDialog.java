@@ -71,7 +71,7 @@ public class CategoryCreateDialog extends DialogFragment implements RecyclerAdap
         RecyclerAdapterListNewCategories recyclerViewAdapterDialog = new RecyclerAdapterListNewCategories(this.getActivity(), mNames, mImageUrls, this);
         recyclerView.setAdapter(recyclerViewAdapterDialog);
 
-        builder.setPositiveButton("Utwórz", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //                TextView editText = view.findViewById(R.id.new_category_name);
@@ -82,7 +82,7 @@ public class CategoryCreateDialog extends DialogFragment implements RecyclerAdap
             }
         });
 
-        builder.setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -108,12 +108,12 @@ public class CategoryCreateDialog extends DialogFragment implements RecyclerAdap
                     String nameOfCategory = editText.getText().toString();
                     nameOfCategory = nameOfCategory.trim();
                     if(appDatabase.categoryDao().getCategoriesNames().contains(nameOfCategory)) {
-                        Toast.makeText(getActivity(), "Nazwa zajęta, wpisz inną", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.category_occupied, Toast.LENGTH_SHORT).show();
                     } else if(nameOfCategory.isEmpty()) {
-                        Toast.makeText(getActivity(), "Wpisz nazwę kategorii", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.category_enter, Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(getContext(), "Utworzono kategorie", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), R.string.category_created, Toast.LENGTH_LONG).show();
                         mOnInputListener.sendInput(nameOfCategory, image);
                         getDialog().dismiss();
                     }

@@ -84,21 +84,10 @@ public class MainActivity extends AppCompatActivity implements CategoryCreateDia
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 switch(item.getItemId()) {
-                    case R.id.shop_button:
-                        item.setChecked(true);
-                        displayMessage("Shop selected...");
-                        drawerLayout.closeDrawers();
-                        return true;
-                    case R.id.upload_button:
-                        item.setChecked(true);
-                        displayMessage("Upload selected...");
-                        drawerLayout.closeDrawers();
-                        return true;
                     case R.id.settings_button:
                         item.setChecked(true);
-                        displayMessage("Settings selected...");
+                        //displayMessage("Settings selected...");
                         drawerLayout.closeDrawers();
                         return true;
                 }
@@ -177,19 +166,19 @@ public class MainActivity extends AppCompatActivity implements CategoryCreateDia
         mNames.add(categoryName);
         mResources.add(image);
         recyclerAdapter.notifyItemInserted(mNames.size() - 1);
-        Toast.makeText(this, "Utworzono kategorie", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Category created", Toast.LENGTH_LONG).show();
     }
 
     private HashMap<String, String> getAllowedIcons() {
         HashMap<String, String> icons = new HashMap<>();
-        icons.put("Podróże", "ic_world");
-        icons.put("Kino", "ic_cinema");
-        icons.put("Filmy", "ic_movie");
-        icons.put("Zakupy", "ic_shop");
-        icons.put("Koszyk", "ic_basket");
-        icons.put("Loty", "ic_plane");
-        icons.put("Lista", "ic_default_list");
-        icons.put("Rachunki", "ic_coins");
+        icons.put("Travel", "ic_world");
+        icons.put("Cinema", "ic_cinema");
+        icons.put("Films", "ic_movie");
+        icons.put("Shopping", "ic_shop");
+        icons.put("Basket", "ic_basket");
+        icons.put("Flights", "ic_plane");
+        icons.put("List", "ic_default_list");
+        icons.put("Accounts", "ic_coins");
         return icons;
     }
 

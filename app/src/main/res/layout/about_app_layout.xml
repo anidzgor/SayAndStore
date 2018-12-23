@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:gravity="center"
-        android:text="O aplikacji"
+        android:text="@string/about_application_title"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -24,7 +24,7 @@
         android:layout_margin="10dp"
         android:layout_weight="0.2"
         android:gravity="center"
-        android:text="Wersja 1.0"
+        android:text="@string/version"
         android:textSize="24sp" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_margin="20dp"
         android:layout_weight="0.6"
         android:gravity="center"
-        android:text="Ikony zostały wykorzystane ze strony flaticon.com"
+        android:text="@string/content_about"
         android:textSize="24sp" />
 
 

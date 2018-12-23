@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Say&amp;Store</string>
     <string name="desc">Store new think</string>
+    <string name="category_occupied">The name of the category is occupied</string>
+    <string name="category_enter">Enter the name of the category</string>
+    <string name="category_created">Category created</string>
+
+    <string name="about_application_title">About the application</string>
+    <string name="version">Version 1.0</string>
+    <string name="content_about">Icons are used from flaticon.com</string>
+
+    <string name="remove_category">Do you want to delete selected category?</string>
+    <string name="back">Back</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="about">About</string>
+
+    <string name="settings_name">Settings</string>
+
 </resources>
