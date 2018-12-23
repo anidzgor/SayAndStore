@@ -1,9 +1,6 @@
-package localization.nidzgor.com.voiceapp;
+package localization.nidzgor.com.voiceapp.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,40 +9,44 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
-import localization.nidzgor.com.voiceapp.XmlUtils.XmlConverter;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.Room;
+import localization.nidzgor.com.voiceapp.AppDatabase;
+import localization.nidzgor.com.voiceapp.R;
 
-class PersonListAdapter extends ArrayAdapter<Product> {
+public class AdapterListTask extends ArrayAdapter<String> {
 
-    private static final String TAG = "PersonListAdapter";
+    private static final String TAG = "AdapterListTask";
 
     private Context mContext;
     private int mResource;
     private int lastPosition = -1;
 
-    private ArrayList<Product> products;
+    private ArrayList<String> tasks;
+    private Integer categoryID;
+
+    private AppDatabase appDatabase;
 
     static class ViewHolder {
         TextView name;
     }
 
-    public PersonListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Product> productsFromShoppingList) {
-        super(context, resource, productsFromShoppingList);
-        mContext = context;
-        mResource = resource;
-        products = productsFromShoppingList;
+    public AdapterListTask(@NonNull Context context, int resource, @NonNull ArrayList<String> tasks, Integer categoryID) {
+        super(context, resource, tasks);
+        this.mContext = context;
+        this.mResource = resource;
+        this.tasks = tasks;
+        this.categoryID = categoryID;
+        appDatabase = Room.databaseBuilder(mContext, AppDatabase.class, "categorydb").allowMainThreadQueries().build();
     }
 
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        String name = getItem(position).getName();
-        Product product = new Product(name);
+        String name = getItem(position);
 
         final View result;
         ViewHolder holder;
@@ -71,28 +72,20 @@ class PersonListAdapter extends ArrayAdapter<Product> {
         ImageButton deleteImageView = convertView.findViewById(R.id.removeButton);
         deleteImageView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                try {
-                    ArrayList<Product> productsFromFile = XmlConverter.readDataFromXmlFile(mContext);
-                    productsFromFile.remove(position);
-                    XmlConverter.saveDataToXmlFile(productsFromFile, mContext.getFilesDir());
-
-                    refresh(productsFromFile);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (XmlPullParserException e) {
-                    e.printStackTrace();
-                }
+                ArrayList<String> tasksFromDatabase = (ArrayList<String>) appDatabase.taskDao().getTasksBelongToSpecificCategory(categoryID);
+                String taskToRemove = tasksFromDatabase.get(position);
+                tasksFromDatabase.remove(taskToRemove);
+                appDatabase.taskDao().deleteSpecificTaskFromCategory(taskToRemove, categoryID);
+                refreshViewAfterDelete();
             }
         });
         return convertView;
     }
 
-    public void refresh(ArrayList<Product> productsToWrite)
-    {
-        this.products.clear();
-        ArrayList<Product> newList = productsToWrite;
-        this.products.addAll(newList);
-        this.notifyDataSetChanged();
+    public void refreshViewAfterDelete() {
+        this.tasks.clear();
+        ArrayList<String> updatedTasks = (ArrayList<String>) appDatabase.taskDao().getTasksBelongToSpecificCategory(categoryID);
+        this.tasks.addAll(updatedTasks);
+        notifyDataSetChanged();
     }
 }
