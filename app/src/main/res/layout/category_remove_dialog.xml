@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:text="Czy chcesz usunąć kategorie?"
+        android:text="@string/remove_category"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal" />
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="3.5">
+        android:weightSum="2.3">
 
         <ImageView
             android:id="@+id/category_to_remove"
@@ -27,20 +27,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:src="@mipmap/ic_movie"
-            android:layout_weight="1.5"/>
+            android:layout_weight="1"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:src="@mipmap/ic_arrow_right"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.3" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:src="@mipmap/ic_rubbish_bin" />
     </LinearLayout>
 
@@ -56,18 +56,25 @@
             android:id="@+id/back_to_main"
             android:layout_width="73dp"
             android:layout_height="50dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.35"
             android:gravity="center"
-            android:text="Cofnij"
+            android:text="@string/back"
             android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/remove_category"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.35"
             android:gravity="center"
-            android:text="Potwierdź"
+            android:text="@string/confirm"
             android:textSize="18sp" />
     </LinearLayout>
 

@@ -24,15 +24,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import localization.nidzgor.com.voiceapp.AppDatabase;
 import localization.nidzgor.com.voiceapp.adapter.RecyclerAdapterListCategory;
-import localization.nidzgor.com.voiceapp.dialog.DialogCategoryCreate;
+import localization.nidzgor.com.voiceapp.dialog.AboutDialog;
+import localization.nidzgor.com.voiceapp.dialog.CategoryCreateDialog;
 import localization.nidzgor.com.voiceapp.R;
 import localization.nidzgor.com.voiceapp.category.Category;
-import localization.nidzgor.com.voiceapp.dialog.DialogCategoryRemove;
+import localization.nidzgor.com.voiceapp.dialog.CategoryRemoveDialog;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class MainActivity extends AppCompatActivity implements DialogCategoryCreate.OnInputListener,
-        DialogCategoryRemove.DeleteListener {
+public class MainActivity extends AppCompatActivity implements CategoryCreateDialog.OnInputListener,
+        CategoryRemoveDialog.DeleteListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -83,21 +84,10 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 switch(item.getItemId()) {
-                    case R.id.shop_button:
-                        item.setChecked(true);
-                        displayMessage("Shop selected...");
-                        drawerLayout.closeDrawers();
-                        return true;
-                    case R.id.upload_button:
-                        item.setChecked(true);
-                        displayMessage("Upload selected...");
-                        drawerLayout.closeDrawers();
-                        return true;
                     case R.id.settings_button:
                         item.setChecked(true);
-                        displayMessage("Settings selected...");
+                        //displayMessage("Settings selected...");
                         drawerLayout.closeDrawers();
                         return true;
                 }
@@ -127,6 +117,10 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
                 return true;
             case R.id.settings_button:
                 return true;
+            case R.id.about_app:
+                AboutDialog aboutDialog = new AboutDialog();
+                aboutDialog.show(getSupportFragmentManager(), "AboutDialog");
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -136,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
     }
 
     private void createNewCategory(MenuItem item) throws IllegalAccessException {
-        DialogCategoryCreate categoryDialog = new DialogCategoryCreate();
+        CategoryCreateDialog categoryDialog = new CategoryCreateDialog();
         Bundle bundle = new Bundle();
 
         Field[] fields = R.mipmap.class.getFields();
@@ -172,19 +166,19 @@ public class MainActivity extends AppCompatActivity implements DialogCategoryCre
         mNames.add(categoryName);
         mResources.add(image);
         recyclerAdapter.notifyItemInserted(mNames.size() - 1);
-        Toast.makeText(this, "Utworzono kategorie", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Category created", Toast.LENGTH_LONG).show();
     }
 
     private HashMap<String, String> getAllowedIcons() {
         HashMap<String, String> icons = new HashMap<>();
-        icons.put("Podróże", "ic_world");
-        icons.put("Kino", "ic_cinema");
-        icons.put("Filmy", "ic_movie");
-        icons.put("Zakupy", "ic_shop");
-        icons.put("Koszyk", "ic_basket");
-        icons.put("Loty", "ic_plane");
-        icons.put("Lista", "ic_default_list");
-        icons.put("Rachunki", "ic_coins");
+        icons.put("Travel", "ic_world");
+        icons.put("Cinema", "ic_cinema");
+        icons.put("Films", "ic_movie");
+        icons.put("Shopping", "ic_shop");
+        icons.put("Basket", "ic_basket");
+        icons.put("Flights", "ic_plane");
+        icons.put("List", "ic_default_list");
+        icons.put("Accounts", "ic_coins");
         return icons;
     }
 

@@ -9,8 +9,8 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/settings_button"
-        android:title="Ustawienia"
+        android:id="@+id/about_app"
+        android:title="@string/about"
         app:showAsAction="never" />
 
 </menu>

@@ -28,7 +28,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:gravity="center"
-        android:text="Lista zakupów"
+        android:text="Example"
         android:textSize="17dp"
         android:textStyle="bold" />
 

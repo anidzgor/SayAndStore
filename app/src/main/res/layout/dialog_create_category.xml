@@ -25,7 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
-        android:hint="Podaj nazwe kategorii"
+        android:hint="@string/category_enter"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
