@@ -6,23 +6,7 @@
             android:id="@+id/settings_button"
             android:title="@string/settings_name"
             android:icon="@mipmap/ic_settings"/>
-        <item
-            android:id="@+id/settings_button2"
-            android:title="@string/settings_name"
-            android:icon="@mipmap/ic_settings"/>
-        <item
-            android:id="@+id/settings_button3"
-            android:title="@string/settings_name"
-            android:icon="@mipmap/ic_settings"/>
-        <item
-            android:id="@+id/settings_button4"
-            android:title="@string/settings_name"
-            android:icon="@mipmap/ic_settings"/>
 
-        <item
-            android:id="@+id/settings_button5"
-            android:title="@string/settings_name"
-            android:icon="@mipmap/ic_settings"/>
     </group>
 
 </menu>

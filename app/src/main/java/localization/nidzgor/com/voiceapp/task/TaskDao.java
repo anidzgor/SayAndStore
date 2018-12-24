@@ -20,6 +20,8 @@ public interface TaskDao {
     @Query("select task_name from Task where category_id = :categoryID")
     List<String> getTasksBelongToSpecificCategory(int categoryID);
 
-    @Query("delete from task where task_name = :taskName and category_id = :categoryID")
+    @Query("delete from task where ID in " +
+            "(SELECT ID FROM task WHERE task_name = :taskName and category_id = :categoryID LIMIT 1)"
+    )
     void deleteSpecificTaskFromCategory(String taskName, int categoryID);
 }

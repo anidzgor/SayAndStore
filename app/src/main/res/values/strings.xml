@@ -7,7 +7,18 @@
 
     <string name="about_application_title">About the application</string>
     <string name="version">Version 1.0</string>
-    <string name="content_about">Icons are used from flaticon.com</string>
+
+    <string name="content_about1">Icons made by authors:\n\n
+        <ul>
+            <li>Smashicons</li>\n
+            <li>Vectors Market</li>\n
+            <li>srip</li>\n
+        </ul>\n
+        which have been placed on the website www.flaticon.com
+    </string>
+
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
 
     <string name="remove_category">Do you want to delete selected category?</string>
     <string name="back">Back</string>
@@ -16,5 +27,7 @@
     <string name="about">About</string>
 
     <string name="settings_name">Settings</string>
+
+    <string name="contact">If you have any questions about the application, please contact us on Google play or send a message to nidzgorskiadrian.pl.</string>
 
 </resources>

@@ -71,7 +71,7 @@ public class CategoryCreateDialog extends DialogFragment implements RecyclerAdap
         RecyclerAdapterListNewCategories recyclerViewAdapterDialog = new RecyclerAdapterListNewCategories(this.getActivity(), mNames, mImageUrls, this);
         recyclerView.setAdapter(recyclerViewAdapterDialog);
 
-        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //                TextView editText = view.findViewById(R.id.new_category_name);
@@ -82,7 +82,7 @@ public class CategoryCreateDialog extends DialogFragment implements RecyclerAdap
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 

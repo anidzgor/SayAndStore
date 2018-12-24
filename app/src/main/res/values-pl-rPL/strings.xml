@@ -8,7 +8,15 @@
 
     <string name="about_application_title">O aplikacji</string>
     <string name="version">Wersja 1.0</string>
-    <string name="content_about">Ikony zostały użyte ze storny flaticon.com</string>
+
+    <string name="content_about1">Ikony zostały wykonane przez autorów:\n\n
+        <ul>
+            <li>Smashicons</li>\n
+            <li>Vectors Market</li>\n
+            <li>srip</li>\n
+        </ul>\n
+        które zostały umieszczone na stronie www.flaticon.com
+    </string>
 
     <string name="create">Utwórz</string>
     <string name="cancel">Anuluj</string>
@@ -20,5 +28,7 @@
     <string name="about">O aplikacji</string>
 
     <string name="settings_name">Ustawienia</string>
+
+    <string name="contact">Wszelkie pytania dotyczące aplikacji proszę kierować na Google play lub przesłać wiadomość na adres nidzgorskiadrian.pl</string>
 
 </resources>
