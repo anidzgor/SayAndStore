@@ -1,1 +1,2 @@
 # SayAndWrite
+The mobile application allows you to create categories and save tasks in them with your voice. Categories and tasks can be deleted at any time. Thanks to this application you will never forget what you have to do. You can create lists of purchases, home tasks, tasks at work or any other that will make life easier and easier. Thanks to the voice function, there is no need to enter each task manually, which saves time.
